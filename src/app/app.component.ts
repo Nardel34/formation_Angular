@@ -13,18 +13,17 @@ export class AppComponent implements OnInit{
     console.table(this.pokemons_list);
   }
 
-  selectPokemon(pokemonId: string){
-    
-    //const index: number = +(event.target as HTMLInputElement).value; // number(...) ou +
-    const i = +pokemonId;
-    const pokemon: Pokemon|undefined = this.pokemons_list.find(pokemon => pokemon.id == +pokemonId);
+  selectPokemon(pokemon: Pokemon){
 
-    if(pokemon){
-      console.log(`Vous avez cliqué sur le pokemon ${pokemon.name}`)
-      this.pokemonSelected = pokemon;
+    //const index: number = +(event.target as HTMLInputElement).value; // number(...) ou +
+    const pokemonFund: Pokemon|undefined = this.pokemons_list.find(pokemonSearch => pokemonSearch.id == pokemon.id);
+
+    if(pokemonFund){
+      console.log(`Vous avez cliqué sur le pokemon ${pokemonFund.name}`)
+      this.pokemonSelected = pokemonFund;
     } else {
       console.log(`Vous avez demandé un Pokémon qui n'existe pas !`)
-      this.pokemonSelected = pokemon;
+      this.pokemonSelected = pokemonFund;
     }
   }
 }
