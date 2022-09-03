@@ -1,7 +1,7 @@
 <h1 class="center">Pokémons</h1>
 <div class="container">
     <div class="row">
-        <div *ngFor="let pokemon of pokemons_list" class="col m4 s6">
+        <div *ngFor="let pokemon of pokemonsList" class="col m4 s6">
             <a class="card horizontal" pkmnBorderCard (click)="pokemonSelected(pokemon)">
                 <div class="card-image">
                     <img [src]="pokemon.picture" alt="pokemon">
