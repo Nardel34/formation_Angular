@@ -1,1 +1,21 @@
-<p>list-pokemon works!</p>
+<h1 class="center">Pokémons</h1>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let pokemon of pokemons_list" class="col m4 s6">
+            <a class="card horizontal" pkmnBorderCard (click)="pokemonSelected(pokemon)">
+                <div class="card-image">
+                    <img [src]="pokemon.picture" alt="pokemon">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{pokemon.name}}</p>
+                        <p><small>{{pokemon.created|date:"dd/MM/yyyy"}}</small></p>
+                        <span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColor}}">
+                            {{type}}
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
